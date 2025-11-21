@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Geopunt Risk Location Finder",
+  "version": "1.0",
+  "description": "Extract parcel information and find risk locations from Geopunt",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.geopunt.be/*",
+    "https://geo.api.vlaanderen.be/*",
+    "https://beheer-risicolocaties.ovam.be/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Geopunt Risk Finder"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.geopunt.be/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
