@@ -38,6 +38,19 @@ Completely inside the parcel
 
 Partially overlapping the parcel
 
+
+
+
+PARCEL BOUNDARY
+┌─────────────────┐
+│                 │
+│    ○ Point      │  ← Risk location A (missed by point query)
+│                 │
+│    ● Your Point │  ← Risk location B (found by both)
+│                 │
+│    ○            │  ← Risk location C (missed by point query)  
+└─────────────────┘
+
 Touching the boundary
 
 Large risk areas that intersect any part of the parcel
