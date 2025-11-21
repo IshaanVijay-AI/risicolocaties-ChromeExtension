@@ -14,7 +14,7 @@ async function handleRiskLocationsRequest(request, sendResponse) {
     const wfsResponse = await wfsClient.queryRiskLocationsDirectLambert(
       coordinates.x_lambert, 
       coordinates.y_lambert, 
-      500
+      0
     );
     
     const riskLocations = wfsClient.parseRiskLocations(wfsResponse);
@@ -116,4 +116,5 @@ class OVAMWFSClient {
     
     return features;
   }
+
 }
