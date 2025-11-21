@@ -4,34 +4,6 @@ A Chrome extension that extracts parcel information from [Geopunt.be](https://ww
 
 ---
 
-## Features
-
-- **Parcel Data Extraction**: Automatically extracts CaPaKey and coordinates from selected parcels on Geopunt.be.  
-- **Risk Location Query**: Queries the OVAM WFS service for risk locations near the extracted coordinates.  
-- **Seamless Integration**: Works directly within the Geopunt.be website without opening new windows.  
-- **Real-time Status**: Displays current extraction status and results in the popup interface.
-
----
-
-## How It Works
-
-### Architecture
-
-The extension uses a multi-component architecture:
-
-- **Popup Interface (`popup.html/js/css`)**: User interface with buttons and status display.  
-- **Content Script (`content.js`)**: Interacts with Geopunt.be page to extract data.  
-- **Background Service (`background.js`)**: Handles API calls to external services.  
-- **Manifest (`manifest.json`)**: Extension configuration and permissions.
-
-### Data Flow
-
-1. User navigates to Geopunt.be and selects a parcel.  
-2. Click the extension icon to open the popup.  
-3. Use buttons to trigger data extraction and risk location queries.  
-4. Results are displayed in real-time within the popup.
-
----
 
 ## Installation
 
@@ -42,23 +14,14 @@ The extension uses a multi-component architecture:
 3. Enable **Developer mode** in the top-right corner.  
 4. Click **Load unpacked** and select the extension folder.  
 5. The extension will appear in your toolbar.
+## Features
+
+- **Parcel Data Extraction**: Automatically extracts CaPaKey and coordinates from selected parcels on Geopunt.be.  
+- **Risk Location Query**: Queries the OVAM WFS service for risk locations near the extracted coordinates.  
+- **Seamless Integration**: Works directly within the Geopunt.be website without opening new windows.  
+- **Real-time Status**: Displays current extraction status and results in the popup interface.
 
 ---
-
-## File Structure
-
-```
-geopunt-extension/
-├── manifest.json      # Extension configuration
-├── popup.html         # Popup user interface
-├── popup.js           # Popup functionality
-├── styles.css         # Popup styling
-├── background.js      # Background service worker
-└── content.js         # Content script for Geopunt interaction
-```
-
----
-
 ## Usage
 
 ### Step-by-Step Guide
@@ -85,6 +48,48 @@ geopunt-extension/
 - Click **Full Automation** to run both steps sequentially automatically.
 
 ---
+
+
+
+## How It Works
+
+### Architecture
+
+The extension uses a multi-component architecture:
+
+- **Popup Interface (`popup.html/js/css`)**: User interface with buttons and status display.  
+- **Content Script (`content.js`)**: Interacts with Geopunt.be page to extract data.  
+- **Background Service (`background.js`)**: Handles API calls to external services.  
+- **Manifest (`manifest.json`)**: Extension configuration and permissions.
+
+### Data Flow
+
+1. User navigates to Geopunt.be and selects a parcel.  
+2. Click the extension icon to open the popup.  
+3. Use buttons to trigger data extraction and risk location queries.  
+4. Results are displayed in real-time within the popup.
+
+---
+
+
+
+---
+
+## File Structure
+
+```
+geopunt-extension/
+├── manifest.json      # Extension configuration
+├── popup.html         # Popup user interface
+├── popup.js           # Popup functionality
+├── styles.css         # Popup styling
+├── background.js      # Background service worker
+└── content.js         # Content script for Geopunt interaction
+```
+
+---
+
+
 
 ### Buttons Description
 
